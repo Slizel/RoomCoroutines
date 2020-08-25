@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="faridnet.com.faridcoletor.Fragments.List.ListFragment"
+        android:label="Lista da Contagem" >
+        <action
+            android:id="@+id/action_listFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_updateFragment"
+            app:destination="@id/updateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="faridnet.com.faridcoletor.Fragments.Add.AddFragment"
+        android:label="Contagem"
+        tools:layout="@layout/fragment_add" >
+        <action
+            android:id="@+id/action_addFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateFragment"
+        android:name="faridnet.com.faridcoletor.Fragments.Update.UpdateFragment"
+        android:label="Editar"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_updateFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+        <argument
+            android:name="currentContagem"
+            app:argType="faridnet.com.faridcoletor.Model.Contagens" />
+        <argument
+            android:name="currentProduto"
+            app:argType="faridnet.com.faridcoletor.Model.Produtos" />
+    </fragment>
+</navigation>
